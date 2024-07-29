@@ -1,0 +1,40 @@
+
+<mat-toolbar>
+     
+  <a style="line-height: 0.5;" mat-button class="logoButton" routerLink="/">
+    <img src="https://img.freepik.com/premium-vector/cartoon-lemon-slice-vector-illustration-isolated-white-background_195968-876.jpg?w=2000" style="width:35px;height:35px;"> 
+    eezee <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Meals
+  </a>
+  
+     &nbsp;&nbsp;
+
+     <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <a mat-button routerLink="/meals">Meals</a> 
+      <br>
+      <a mat-button routerLink="/about-us">About Us</a>
+      <br>
+      <a mat-button *ngIf="_accService.loggedIn()" routerLink="/edit-account">Account Details</a>
+    </mat-menu>
+
+     
+
+     <div class="spacer"></div>
+     <a mat-raised-button *ngIf="!_accService.loggedIn()" routerLink="/signin" class="signup">Sign In</a>
+     <a mat-raised-button *ngIf="_accService.loggedIn()"  (click)="_accService.logoutUser()" class="signup">Sign Out</a>
+     <a mat-button routerLink="/cart" class="dotbutton"> .</a>
+</mat-toolbar>
+
+<style>
+    hr {
+      width: 100%;
+      height: 1px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #D9D9D9;
+    }
+  </style>
+<hr>

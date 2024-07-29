@@ -1,0 +1,21 @@
+<div class="container">
+    <mat-card class="card">
+        <div>
+            <h1>Log In</h1>
+            <h4>Please enter email & password</h4>
+        </div>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+           <input matInput [(ngModel)]='loginUserData.email' type="text">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput [(ngModel)]='loginUserData.password' type="password">
+        </mat-form-field>
+        <br>
+        <a routerLink="/signup">If you do not have an account press here to sign up</a>
+        <br><br>
+        <a mat-raised-button class="button" (click)="loginUser()" >Log In</a>
+    </mat-card>
+</div>

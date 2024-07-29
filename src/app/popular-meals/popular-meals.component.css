@@ -1,0 +1,63 @@
+.main{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 4%;
+    padding-bottom: 3%;
+}
+
+#one{
+    /* background-size: 110%; */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('https://www.eatwell101.com/wp-content/uploads/2018/03/Garlic-Butter-Chicken-with-Parmesan-Cauliflower-Rice.jpg');
+}
+
+#two{
+    /* background-size: 110%; */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('https://gousto.gurucloud.co.uk/wp-content/uploads/2018/11/green-plate-1.jpg');
+}
+
+#three{
+    /* background-size: 110%; */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('https://img.taste.com.au/27HLC_W5/taste/2019/05/one-pot-healthy-chicken-pasta-149595-2.jpg');
+}
+
+#four{
+    /* background-size: 110%; */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('https://simplesassyscrumptious.com/wp-content/uploads/2020/01/Chickpea-salad-with-greek-yogurt.jpg');
+}
+
+#five{
+    /* background-size: 110%; */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('https://www.eatwell101.com/wp-content/uploads/2020/05/steak-and-peppers-recipe-.jpg');
+}
+
+#six{
+    /* background-size: 110%; */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2022/05/Roasted-Red-Pepper-and-Chickpea-Salad-1-2.jpg');
+}
+
+.mat-button{
+    font-family: fantasy;
+    padding-top: 3%;
+    font-size: 20px;
+    /*font-size: 3vw;*/
+    color: rgb(0, 0, 0);
+    text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+}

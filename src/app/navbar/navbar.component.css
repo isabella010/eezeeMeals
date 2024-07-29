@@ -1,0 +1,30 @@
+.mat-toolbar{
+    background-color:rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+    font-family: fantasy;
+    width:100%
+}
+
+.spacer{
+    flex: 1 1 auto;
+}
+
+.dotbutton{
+    color:rgb(0, 0, 0);
+    background-image: url('https://www.freeiconspng.com/thumbs/cart-icon/basket-cart-icon-27.png');
+    background-size: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.logoButton{
+    font-size: 25px;
+    font-family: fantasy;
+    color:rgb(46, 46, 46);
+}
+
+.signup{
+    background-color:rgb(255, 221, 0);
+    color:rgb(54, 54, 54);
+   /* text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0); */
+}

@@ -1,0 +1,44 @@
+.theCard {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .col-md-9 {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .row row-cols-1 row-cols-md-4 g-4{
+    border: 10px 
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .btn-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    font-weight:normal;
+    color: rgb(42, 42, 42);
+    background-color: #ffd900;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 5px;
+    /* border: 1px solid black; */
+  padding: 5px 10px;
+  margin: 0 5px;
+  }
+  
+  .btn-quantity:hover {
+    background-color: #ceaf00;
+  }
+
+  
+  

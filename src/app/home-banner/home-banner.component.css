@@ -1,0 +1,32 @@
+.main{
+    background-image:url(../../assets/images/bannerNew.png);
+    background-size:cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    height:40%;
+    width:100%;
+    object-fit: cover;
+}
+
+.text{
+    padding-top: 5%;
+    font-size: 40%;
+    width: auto;
+    margin: auto;
+    text-align: center;
+    
+}
+
+.outline{
+    text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+}
+
+.view{
+    background-color:rgb(255, 224, 20);
+    color:rgb(255, 255, 255);
+}
+
+.mat-raised-button{
+    background-color:rgb(255, 221, 0);
+    color:rgb(54, 54, 54);
+}

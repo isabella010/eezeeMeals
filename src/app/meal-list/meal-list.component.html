@@ -1,0 +1,124 @@
+<!--
+<h2>{{usersID}}</h2>
+<div class="row mt-5">
+    <ng-container *ngFor="let meal of meals">
+        <div class="col-md-4 mb-3 mr=1">
+            <mat-card class="theCard">
+                <mat-card-header>
+                    <mat-card-title>{{meal.name}}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="{{meal.image}}" alt="ERROR LOADING">
+                <mat-card-content>
+                    <p>{{meal.description}}</p>
+                </mat-card-content>
+                <mat-card-footer>
+                    <p class="text-muted">${{meal.price}}</p>
+                    <a mat-raised-button color="accent" href="#">Add To Cart</a>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+    </ng-container>
+</div>
+-->
+      <!--
+      <h2 class="formtite" *ngIf="_accService.admin()">Update Meal Status</h2>
+      <form #form="ngForm" *ngIf="_accService.admin()" (ngSubmit)="onSubmitUpdateMealFalse()"> 
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput [formControl]="upFormControl" type="text" required name="name" ngModel>
+      </mat-form-field>
+        <button mat-raised-button color="accent" type="submit" (click)="onSubmitUpdateMealFalse()">Out of Stock</button>
+      </form>
+  
+      <form #form="ngForm" *ngIf="_accService.admin()" (ngSubmit)="onSubmitUpdateMealTrue()"> 
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput [formControl]="upFormControl" type="text" required name="name" ngModel>
+      </mat-form-field>
+        <button mat-raised-button color="accent" type="submit" (click)="onSubmitUpdateMealTrue()">Back in Stock</button>
+      </form>-->
+  
+      
+  
+  <!--<div>
+    <h2 class="formtite" *ngIf="_accService.admin()">Delete Meal</h2>
+    <mat-form-field *ngIf="_accService.admin()">
+      <mat-label>Name</mat-label>
+      <input matInput [formControl]="mealFormControl" type="text" required name="name" color="warning">
+    </mat-form-field>
+    <button mat-raised-button color="accent" (click)="onSubmitDeleteMeal(meal.name)" *ngIf="_accService.admin()">Delete Food</button>
+  </div>-->
+  
+  
+
+<div class="row mt-5">
+    <ng-container *ngFor="let meal of meals">
+        <div class="col-md-4 mb-3 mr=1">
+            <mat-card class="theCard">
+                <mat-card-header>
+                    <mat-card-title>{{meal.name}}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="{{meal.image}}" alt="ERROR LOADING">
+                <mat-card-content>
+                    <p>{{meal.description}}</p>
+                </mat-card-content>
+                <mat-card-footer>
+                    <p class="text-muted">${{meal.price}}</p>
+                    <a mat-raised-button color="accent" *ngIf="meal.stock" (click)="addItem(meal)">Add To Cart</a>
+                    <a mat-raised-button color="warn" *ngIf="!meal.stock" >CURRENTLY OUT OF STOCK</a>
+                    <div  *ngIf="_accService.admin()" style="background-color: rgb(255, 255, 163); display: flex; justify-content: center;">
+                        <div  style="border: 1px solid rgba(243, 197, 11, 0.963); margin-right: 7px;">
+                            <a mat-stroked-button color="basic" *ngIf="_accService.admin()" (click)="onSubmitUpdateMealFalse(meal)">Out Of Stock</a>
+                        </div>
+                        <div style="border: 1px solid rgba(243, 197, 11, 0.963); margin-right: 7px;">
+                            <a mat-stroked-button color="basic" *ngIf="_accService.admin()" (click)="onSubmitUpdateMealTrue(meal)">Back In Stock</a>
+                        </div>
+                        <div style="border: 1px solid rgba(243, 197, 11, 0.963); margin-right: 7px;">
+                            <a mat-stroked-button color="basic" *ngIf="_accService.admin()" (click)="onSubmitDeleteMeal(meal)">Delete Food</a>
+                        </div>
+                    </div>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+    </ng-container>
+</div>
+
+
+
+
+
+<!-- <div class="row mt-5" style=" margin:0 auto;">
+    <div class="col-md-4 mb-3 mr=1" *ngFor="let meal of meals">
+        <mat-card class="theCard">
+        <div class="card text-center">
+            <img class="card-img-top" src={{meal.image}} alt="ERROR LOADING">
+            <div class="card-body">
+            <h2 class="card-title">{{meal.name}}</h2>
+            <p class="card-text">{{meal.description}}</p>
+            <div class="card-footer text-muted">${{meal.price}}</div>
+        </div>
+        <a href="#" class="btn">Add To Cart</a>
+        </div>
+    </mat-card>
+    </div> 
+</div> -->
+
+
+<!--
+<div class="container" *ngFor="let meal of meals">
+    <mat-card class="theCard"> 
+        <div class="outer">
+        <a class="pic"
+            style="background-image: url({{meal.image}})"
+        ></a> 
+        <mat-card-title class="title">{{meal.name}}</mat-card-title>
+        <mat-card-content>
+            <p>
+              {{meal.description}}
+            </p>
+          </mat-card-content> 
+        </div>
+    </mat-card>
+<br>
+</div>
+-->

@@ -1,0 +1,119 @@
+<app-navbar></app-navbar>
+<div class="container">
+
+    <div class="col-sm-12 justify-content-end">
+      <h2 class="formtite">Shipping</h2>
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header" style="font-size: 20px; display: flex; justify-content: space-between;">
+            <span style="margin-top: 5px;">{{ showForm ? 'One Time Shipping Information' : 'Saved Shipping Information' }}</span>
+            <button type="button" class="btn btn-primary" (click)="showForm = !showForm" style="margin-top: 3px;">
+              {{ showForm ? 'Use Saved Shipping' : 'Use One Time Shipping'  }}
+            </button>
+          </div>  
+          <div class="card-body">
+            <form>
+              <div *ngIf="showForm">
+                <div class="form-group">
+                  <label for="street">Street</label>
+                  <input type="text" class="form-control" id="street" name="street" [(ngModel)]="oneTimeAcc.street" [disabled]="confirmClicked">
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="number">Number</label>
+                    <input type="text" class="form-control" id="number" name="number" [(ngModel)]="oneTimeAcc.number" [disabled]="confirmClicked">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="unit">Unit (Optional)</label>
+                    <input type="text" class="form-control" id="unit" name="unit" [(ngModel)]="oneTimeAcc.unit" [disabled]="confirmClicked">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="city">City</label>
+                  <input type="text" class="form-control" id="city" name="city" [(ngModel)]="oneTimeAcc.city" [disabled]="confirmClicked">
+                </div>
+                <div class="form-group">
+                  <label for="postal_code">Postal Code</label>
+                  <input type="text" class="form-control" id="postal_code" name="postal_code" [(ngModel)]="oneTimeAcc.postal" [disabled]="confirmClicked">
+                </div>
+                <div class="form-group">
+                  <label for="phone_number">Phone Number</label>
+                  <input type="text" class="form-control" id="phone_number" name="phone_number" [(ngModel)]="oneTimeAcc.phone" [disabled]="confirmClicked">
+                </div>
+                <a mat-raised-button color="accent" *ngIf="!confirmClicked" (click)=" confirmDetails()">Confirm Details</a>
+                <a mat-raised-button color="accent" *ngIf="confirmClicked" (click)=" editDetails()">Edit Information</a>
+              </div>
+            </form>
+            
+            <ng-container *ngIf="!showForm && tmpAcc.street">
+              <h5 class="card-title" style="font-size: 18px;"><b>Street:</b> {{tmpAcc.street}}</h5>
+              <h5 class="card-title" style="font-size: 18px;"><b>Number:</b> {{tmpAcc.number}}</h5>
+              <h5 class="card-title" style="font-size: 18px;"><b>Unit:</b> {{tmpAcc.unit}}</h5>
+              <h5 class="card-title" style="font-size: 18px;"><b>City:</b> {{tmpAcc.city}}</h5>
+              <h5 class="card-title" style="font-size: 18px;"><b>Postal Code:</b> {{tmpAcc.postal}}</h5>
+              <h5 class="card-title" style="font-size: 18px;"><b>Phone:</b> {{tmpAcc.phone}}</h5>
+            </ng-container>
+            
+            <ng-container *ngIf="!showForm && !tmpAcc.street">
+              <p style="font-size: 18px;">No shipping address on account. <br>
+                Click <a href="/edit-account">here</a> to go to account settings or use one time shipping</p>
+            </ng-container>   
+          </div>
+        </div>
+      </div>
+        <h3> </h3>
+      </div>
+    
+  
+  <div class="row">
+    <div class="col-sm-12 justify-content-end">
+      <h2 class="formtite">Your Cart</h2>
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header" style="font-size: 20px;">
+            Total Price
+          </div>
+          <div class="card-body">
+            <h5 class="card-title" style="font-size: 18px;">${{getTotalPrice()}}</h5>
+            <h5 class="card-title" style="font-size: 18px;">With Tax: ${{getTotalPriceTax()}}</h5>
+          </div>
+          <a mat-raised-button color="accent" (click)="makePayment(payy)">Check Out</a>
+        </div>
+        <h3> </h3>
+      </div>
+    </div>
+  </div>
+  
+  <div class="main-content" >
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <ng-container *ngFor="let meal of meals">
+        <div class="col">
+          <div class="card">
+            <img src="{{meal.image}}" class="card-img-top" alt="ERROR LOADING">
+            <div class="card-body">
+              <h5 class="card-title">{{meal.name}}</h5>
+              <p class="card-text">{{meal.description}}</p>
+              <p class="card-text text-muted">${{meal.price}}</p>
+            </div>
+            <div class="card-footer">
+              <div class="d-flex align-items-center">
+                <a class="btn-quantity" (click)="delItm(meal._id)">-</a> 
+                <a> &nbsp;&nbsp; Qty:&nbsp;{{meal.quantity}} &nbsp;&nbsp;</a>
+                <a class="btn-quantity" (click)="addItem(meal)">+</a>
+                
+                <!--<a mat-raised-button color="accent" (click)="delItm(meal._id)">-</a> 
+                <a> &nbsp;&nbsp; Quantity: {{meal.quantity}} &nbsp;&nbsp;</a> 
+                <a mat-raised-button color="accent" (click)="addItem(meal)">+</a>-->
+              </div>
+            </div>
+          </div>
+          <h3> </h3>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+
+<app-footer></app-footer>
+
